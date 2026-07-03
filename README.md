@@ -1,5 +1,4 @@
 # Example
-
 library(devtools)
 install_github("PrabinDahal/parasiteclearance")
 library(parasiteclearance)
@@ -24,15 +23,6 @@ dat <- data.frame(
 )
 
 estimate_clearance_batch(dat, detection_limit = 16)
-
-# Output
-> estimate_clearance_batch(dat, detection_limit = 16)
-# A tibble: 3 × 7
-     id status    reason model_type  tlag clearance_rate_constant slope_half_life
-  <dbl> <chr>     <chr>  <chr>      <dbl>                   <dbl>           <dbl>
-1     1 estimated ok     linear         0                  0.591             1.17
-2     5 estimated ok     cubic          0                  0.126             5.48
-3     8 estimated ok     cubic          0                  0.0789            8.78
 
 ## How does it compare with WWARN PCE tool?
 # Matches for id 1 and 5.
