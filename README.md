@@ -1,4 +1,9 @@
+This is an AI generated R package.
+Under Development
+
+
 # Example
+```r
 library(devtools)
 install_github("PrabinDahal/parasiteclearance")
 library(parasiteclearance)
@@ -22,12 +27,22 @@ dat <- data.frame(
   )
 )
 
+# Estimate Slope HL
 estimate_clearance_batch(dat, detection_limit = 16)
+</r>
 
-## How does it compare with WWARN PCE tool?
-# Matches for id 1 and 5.
+# Output 
+| id | status    | reason | model_type | tlag | clearance_rate_constant | slope_half_life |
+|----|----------|--------|------------|------|--------------------------|------------------|
+| 1  | estimated | ok     | linear     | 0    | 0.591                    | 1.17             |
+| 5  | estimated | ok     | cubic      | 0    | 0.126                    | 5.48             |
+| 8  | estimated | ok     | cubic      | 0    | 0.0789                   | 8.78             |
 
+
+### How does it compare with WWARN PCE tool?
 https://www.iddo.org/wwarn/parasite-clearance-estimator-pce
+
+# Matches for id 1 and 8, not quite for id 5
 
 | id | Clearance_rate_constant | Slope_half_life |
 |----|--------------------------|------------------|
